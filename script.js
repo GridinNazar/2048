@@ -4,7 +4,6 @@ import { Tile } from "./tile.js";
 const gameBoard = document.getElementById('game-board')
 const grid = new Grid(gameBoard)
 
-
 document.addEventListener('dblclick', (e) => {e.preventDefault();})
 
 let hammer = new Hammer(document.querySelector('body'))
@@ -170,3 +169,19 @@ function canMoveInGroup(group) {
         return targetCell.canAccept(cell.linkedTile)
     })
 }
+
+const modal = document.querySelector('.modal')
+const modalWrapper = document.querySelector('.modal--wrapper')
+const modalButton = document.querySelector('.modal--wrapper button')
+
+modalButton.addEventListener('click', e => {
+    modalWrapper.classList.add('hidden')
+}, {once: true})
+
+setTimeout(() => {
+    modalWrapper.classList.remove('hidden')
+    modal.classList.remove('hidden')
+    setTimeout(() => {
+        modalButton.classList.remove('hidden')
+    }, 1000)
+}, 2000)
