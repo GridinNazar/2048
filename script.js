@@ -68,7 +68,7 @@ async function handleInput(e) {
 
     if (!canMoveUp() && !canMoveDown() && !canMoveLeft() && !canMoveRight()) {
         await newTile.waitForAnimationEnd()
-        alert('Ты самая красивая!')
+        alert('Проиграла) Перезагрузи страницу чтобы заново начать')
     }
 
     setupInputOnce()
